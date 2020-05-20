@@ -26,7 +26,7 @@ export default createGlobalStyle`
       }
 
     body {
-      font-family: Work Sans;
+      font-family: 'Work Sans', sans-serif;
       margin: 0;
       width: 100%;
       height: 100%;

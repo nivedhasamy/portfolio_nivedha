@@ -73,12 +73,12 @@ footerLinks: [
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: "UA-XXXXXXXXX-X",
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-166780752-1",
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-dark-mode`,
     `gatsby-plugin-sass`,     

@@ -1,7 +1,7 @@
 ---
 title: 'Portfolio'
-live: 'http://localhost:8000'
-source: 'https://github.com/NihilisticNive25/portfolioDesign/tree/master/portfolioDesign'
+live: 'nivedhasamy.netlify.app'
+source: 'https://github.com/NihilisticNive25/portfolio_nivedha'
 stack: 'React - Gatsby - Styled Components - GraphQL'
 image: 'portfolio.png'
 ---
