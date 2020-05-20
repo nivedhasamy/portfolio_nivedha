@@ -1,7 +1,7 @@
 import React from "react";
-import SectionTitle from "../components/utils/sectiontitle";
+import SectionTitle from "../components/utils/sectionTitle";
 import { StaticQuery, graphql } from "gatsby";
-import SocialLinks from "../components/sociallinks";
+import SocialLinks from "../components/socialLinks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faMapMarked } from "@fortawesome/free-solid-svg-icons";
 import styled from 'styled-components';

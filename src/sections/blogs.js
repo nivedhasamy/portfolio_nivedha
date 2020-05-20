@@ -1,5 +1,5 @@
 import React from "react";
-import SectionTitle from "../components/utils/sectiontitle";
+import SectionTitle from "../components/utils/sectionTitle";
 import { useStaticQuery, graphql } from "gatsby";
 import BlogItem from '../templates/blog';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

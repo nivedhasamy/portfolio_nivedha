@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby';
-import SectionTitle from "../components/utils/sectiontitle";
+import SectionTitle from "../components/utils/sectionTitle";
 import styled from 'styled-components';
 
 const Container = styled.section `
