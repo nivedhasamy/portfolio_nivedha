@@ -1,5 +1,5 @@
 ---
-title: 'Portfolio'
+title: 'React Form'
 live: 'https://basic-react-form.netlify.app'
 source: 'https://github.com/NihilisticNive25/reactForm'
 stack: 'React'
