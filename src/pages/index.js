@@ -10,10 +10,12 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
-  <Layout>
+    <Layout>
     <SEO title="Hello"/>
+
     <Home />
      <About />
+    
     <Portfolio />
    <Blogs/>
      <Contact />

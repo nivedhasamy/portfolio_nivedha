@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import SectionTitle from "../components/utils/sectionTitle";
 import { useStaticQuery, graphql } from "gatsby";
 import BlogItem from '../templates/blog';
@@ -14,7 +14,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 padding: 5.5rem 0rem;
-
+//visibility:hidden;
 @media ${props => props.theme.mediaQueries.small} {
   padding: 5rem 1rem;
 }
@@ -40,8 +40,8 @@ align-content: center;
  left: 10px;
  bottom: 168px;
 }
+${props => props.theme.animateBottomToTop()};
 
- 
   @media ${props => props.theme.mediaQueries.large} {
    flex-direction:row;
    width:100%;
@@ -121,6 +121,16 @@ const Blog = () => {
   }
      `);
   
+   // useEffect(() => {
+   //      window.addEventListener("scroll", function() {
+   //          if (this.scrollY > 0) {
+   //              document.getElementById('blogs').style.visibility = 'visible';
+   //          } else {
+   //              document.getElementById('blogs').style.visibility = 'hidden';
+   //          }
+   //      });
+   //  }, [])
+   
   return (
       <Container id="blogs" >
             <SectionTitle title="FROM MY BLOG" />           

@@ -11,6 +11,33 @@ gradientTextMixin: (primaryColor,secondaryColor) => `
   -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
 `,
+
+
+animateLeftToRight : () => `
+
+animation: left_to_right 1s ease;
+@keyframes left_to_right {
+  from {    margin-left: -1.5em;  }
+  to {    margin-left: 0;  }
+}`,
+
+
+animateRightToLeft : () => `
+animation: right_to_left 1s ease;
+@keyframes right_to_left {
+  from {    margin-right: -1.5em;  }
+  to {    margin-right: 0;  }
+}
+`,
+
+
+animateBottomToTop : (fromPosition,delay,) => `
+animation: animatebottom ${delay}s ;
+@keyframes animatebottom { 
+  from{ margin-bottom:-100px; opacity:0;  } 
+  to{ }
+}`,
+
     colors: {
       main: '#127EB1',
       light: '#089ECA',

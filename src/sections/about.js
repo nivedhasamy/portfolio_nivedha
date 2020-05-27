@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { useStaticQuery, graphql } from 'gatsby';
 import SectionTitle from "../components/utils/sectionTitle";
 import styled from 'styled-components';
@@ -8,7 +8,7 @@ const Container = styled.section `
   flex-direction: column;
   align-items: center;
   padding: 5.5rem 0rem;
-
+ // visibility: hidden;
   @media ${props => props.theme.mediaQueries.small} {
     padding: 1rem 1rem;
   }
@@ -22,6 +22,8 @@ const ContentWrapper = styled.section `
   text-align: center;
     padding: 0rem 11rem;
     color: var(--textSecondary);
+
+    
     & a{
          color:  var(--textSecondary);
         text-decoration: underline;
@@ -88,6 +90,17 @@ const About = () => {
 `)
 
     const { frontmatter: { resume, stack }, html } = aboutMe.childMarkdownRemark
+
+    // useEffect(() => {
+    //     window.addEventListener("scroll", function() {
+    //         if (this.scrollY > 0) {
+    //             document.getElementById('about').style.visibility = 'visible';
+    //         } else {
+    //             document.getElementById('about').style.visibility = 'hidden';
+    //         }
+    //     });
+    // }, [])
+
     return (
         <Container id="about" >       
           <SectionTitle title="About" /> 

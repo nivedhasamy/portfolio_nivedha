@@ -9,8 +9,8 @@ const SectionTitleWrapper = styled.h2`
      opacity:var(--opacity);  
      font-size: 5rem;
      text-transform: uppercase;
-    
 
+    ${props => props.theme.animateBottomToTop(-100,2)};
   @media ${props => props.theme.mediaQueries.small} {
     font-size: 3rem;
   }

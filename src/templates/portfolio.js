@@ -3,39 +3,25 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faDesktop,    
-  } from '@fortawesome/free-solid-svg-icons';
-  import {
+    faDesktop,
+} from '@fortawesome/free-solid-svg-icons';
+import {
     faGithub,
-  } from '@fortawesome/free-brands-svg-icons';
+} from '@fortawesome/free-brands-svg-icons';
 
 const TemplateContainer = styled.section `
 display: flex;
 justify-content: space-between;
 padding: 3rem 0rem;
-&:nth-child(2n) {
-    flex-direction: row-reverse;
-  }
   align-items: center;
-// @media ${props =>  props.theme.mediaQueries.largest  } {
-//   &:nth-child(2n) {
-//     flex-direction: row-reverse;
-//   }
-// }
 
-// @media ${props =>   props.theme.mediaQueries.larger} {
-//   &:nth-child(2n) {
-//     flex-direction: row-reverse;
-//   }
-// }
+&:nth-child(2n) {
+    flex-direction: row-reverse;   
+  }
 
-@media ${props =>  props.theme.mediaQueries.large  } {
- 
-    padding: 3rem 3rem;
-    // &:nth-child(2n) {
-    //   flex-direction: row-reverse;
-    // }
-  
+
+@media ${props =>  props.theme.mediaQueries.large  } { 
+    padding: 3rem 3rem;    
 }
 
 
@@ -93,7 +79,6 @@ text-align: start;
     width: 45%;  
     align-self: center;
     
-   
     @media ${props => props.theme.mediaQueries.medium} {
       width: 80%;
     }
@@ -106,7 +91,7 @@ text-align: start;
     }
 `;
 
-const AboutApp = styled.span`
+const AboutApp = styled.span `
 color:var(--textSecondary);
 
 & a{
@@ -121,7 +106,7 @@ color:var(--textSecondary);
 
 `;
 
-const Stack = styled.p`
+const Stack = styled.p `
 color:var(--textSecondary);
       font-weight: bold;
       font-size: 1.1rem;
@@ -139,7 +124,7 @@ color:var(--textSecondary);
 
 `;
 
-const BtnWrapper = styled.div`
+const BtnWrapper = styled.div `
 display: flex;
 justify-content: space-between;
 width: 15rem;
@@ -168,14 +153,15 @@ width: 15rem;
 `;
 
 
-const FontAwesomeDiv = styled(FontAwesomeIcon)`
+const FontAwesomeDiv = styled(FontAwesomeIcon)
+`
 padding-right:0.1rem;
 `;
 
 
 const PortfolioItem = ({ portfolio }) => {
-  const { title, live, source, stack, image } = portfolio.frontmatter;
-  return (
+    const { title, live, source, stack, image } = portfolio.frontmatter;
+    return (
         <TemplateContainer>          
           <ImageWrapper>
            {!!image && <Img style= {{width: '100%', height : '100%'}} fluid={image.childImageSharp.fluid}  />}
@@ -196,7 +182,7 @@ const PortfolioItem = ({ portfolio }) => {
               </BtnWrapper>
             </DetailsContainer>
         </TemplateContainer>
-  );
+    );
 };
 
 export default PortfolioItem;

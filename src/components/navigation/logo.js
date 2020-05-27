@@ -16,6 +16,7 @@ const Logo = () => {
         <img
             className="logo"
             src={Icon}
+            style={{width:'150px', heigth:'30px'}}
             alt={query.site.siteMetadata.title}
         />
     );

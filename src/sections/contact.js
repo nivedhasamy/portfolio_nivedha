@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import SectionTitle from "../components/utils/sectionTitle";
 import { StaticQuery, graphql } from "gatsby";
 import SocialLinks from "../components/socialLinks";
@@ -11,6 +11,7 @@ const Container = styled.section `
   flex-direction: column;
   align-items: center;
   padding: 10rem 0rem;
+ visibility:hidden;
     & p{
         @media ${props => props.theme.mediaQueries.small} {
             font-size : 1rem;
@@ -68,7 +69,19 @@ const Contact = ({
         mail,
         address
     }
-}) => (
+}) => {
+
+useEffect(() => {
+        window.addEventListener("scroll", function() {
+            if (this.scrollY > 0) {
+                document.getElementById('contact').style.visibility = 'visible';
+            } else {
+                document.getElementById('contact').style.display = 'hidden';
+            }
+        });
+    }, [])
+
+  return(
     <Container id="contact" >       
             <SectionTitle title="Contact" /> 
       
@@ -89,7 +102,7 @@ const Contact = ({
                 <SocialLinks/>
             </ContentWrapper>
         </Container>
-);
+)};
 
 export default () => (
     <StaticQuery

@@ -13,6 +13,17 @@ justify-content: space-between;
 width: 30rem;
 padding: 2rem 0rem;
 
+&:nth-child(n){
+ ${props => props.theme.animateLeftToRight()};
+}
+
+&:nth-child(2n) {
+    
+ ${props => props.theme.animateRightToLeft()}; 
+  }
+
+
+
 @media ${props => props.theme.mediaQueries.large} {
   width: 45%;
 }
@@ -37,6 +48,8 @@ width: 100%;
      padding: 0.1rem;      
      background-color: var(--textSecondary) ; 
 }
+
+
 @media ${props => props.theme.mediaQueries.small} {
   width: 100%;
 }

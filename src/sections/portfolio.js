@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useEffect} from "react"
 
 import { useStaticQuery, graphql } from 'gatsby';
 import SectionTitle from "../components/utils/sectionTitle";   
@@ -15,7 +15,7 @@ const Container = styled.section `
   flex-direction: column;
   align-items: center;
   padding: 5.5rem 0rem;
-
+ // visibility:hidden;
   @media ${props => props.theme.mediaQueries.small} {
     padding: 5rem 1rem;
   }
@@ -145,6 +145,17 @@ query {
      }
    }
    `);
+
+
+    // useEffect(() => {
+    //     window.addEventListener("scroll", function() {
+    //         if (this.scrollY > 0) {
+    //             document.getElementById('portfolio').style.visibility = 'visible';
+    //         } else {
+    //             document.getElementById('portfolio').style.visibility = 'hidden';
+    //         }
+    //     });
+    // }, [])
 
    return (
 

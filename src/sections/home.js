@@ -15,6 +15,7 @@ const Container = styled.section `
   text-align: center;
    height:100vh;
   margin: auto;
+  ${props => props.theme.animateBottomToTop(-200,6)};
   @media ${props => props.theme.mediaQueries.small} {
     padding: 5rem 1rem;
   }
@@ -90,14 +91,14 @@ const IntroLine = styled.p `
       }
 `;
 
-const Caption = styled.h2`
+const Caption = styled.h2 `
     font-size: 35px;
     & span{
         font-family: Work Sans;
     }
 `;
 
-const TagLine = styled.p`
+const TagLine = styled.p `
      font-family: monospace;
      font-size:15px;
      color:var(--textSecondary);
@@ -110,25 +111,26 @@ const TagLine = styled.p`
       }
 `;
 
-const GradientLink = styled.a`
+const GradientLink = styled.a `
   text-decoration: none !important;
   height: 40px !important;
-	line-height: 40px !important;
-	font-size: 16px !important;
-	letter-spacing: 1px;
-	margin: 25px 0;
-	padding: 0 30px !important;
-	color: #fff !important;
-	border: none !important;
+  line-height: 40px !important;
+  font-size: 16px !important;
+  letter-spacing: 1px;
+  margin: 25px 0;
+  padding: 0 30px !important;
+  color: #fff !important;
+  border: none !important;
    box-shadow: none;
    border-radius: 7px;
    ${props => props.theme.gradientBgMixin(props.theme.colors.primaryColor,props.theme.colors.secondaryColor)};    
    opacity:var(--opacity); 
+ 
 
      @media ${props => props.theme.mediaQueries.small} {
     height: 35px !important;
-	line-height: 34px !important;
-	font-size: 14px !important;
+  line-height: 34px !important;
+  font-size: 14px !important;
   }
   @media ${props => props.theme.mediaQueries.smallest} {
     height: 30px !important;
@@ -139,24 +141,25 @@ const GradientLink = styled.a`
 `;
 
 
-const FontAwesomeDiv = styled(FontAwesomeIcon)`
+const FontAwesomeDiv = styled(FontAwesomeIcon)
+`
 padding-left:0.3rem;
 `;
 
 
 const Home = ({
     data: {
-      greeting,
+        greeting,
         introTag,
         tagLine,
     }
 }) => (
-      <Container>
+    <Container id="home">
          <TitleWrapper>
 
-            <Typist cursor={{element : ""}}>
+           
                 <h2> {greeting}👋</h2>
-                <Typist.Delay ms={200} />
+                 <Typist cursor={{element : ""}}>
                 <Caption> I’m             
                     <span className="title">&nbsp; Nivedha</span>              
                 </Caption>
@@ -176,7 +179,7 @@ const Home = ({
              See Work
             <span> <FontAwesomeDiv  icon={faBriefcase} size="lg"/></span>
          </GradientLink>
-     </Container> 
+     </Container>
 )
 
 

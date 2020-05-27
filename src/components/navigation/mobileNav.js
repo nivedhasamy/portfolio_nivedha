@@ -119,19 +119,7 @@ const [scroll, setScrollState] = useState(false);
         sidebar={<SidebarContents onSetSidebarOpen={onSetSidebarOpen}/>}
         open={sidebarOpen}
         onSetOpen={onSetSidebarOpen}  
-        styles={{
-          sidebar: {
-              zIndex: 101,
-              position: "fixed"
-          },
-          overlay: {
-              zIndex: 100
-          },
-          dragHandle: {
-              position: "fixed",
-              zIndex: "99999"
-          }
-      }}      
+           
       > 
       <MobileMenuContainer scroll={scroll}>
       <span  onClick={() => onSetSidebarOpen(true)}>
