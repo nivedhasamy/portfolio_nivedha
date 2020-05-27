@@ -15,7 +15,6 @@ const Container = styled.section `
   text-align: center;
    height:100vh;
   margin: auto;
-  ${props => props.theme.animateBottomToTop(-200,6)};
   @media ${props => props.theme.mediaQueries.small} {
     padding: 5rem 1rem;
   }
@@ -126,6 +125,7 @@ const GradientLink = styled.a `
    ${props => props.theme.gradientBgMixin(props.theme.colors.primaryColor,props.theme.colors.secondaryColor)};    
    opacity:var(--opacity); 
  
+  ${props => props.theme.animateBottomToTop(-200)};
 
      @media ${props => props.theme.mediaQueries.small} {
     height: 35px !important;

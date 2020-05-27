@@ -31,7 +31,7 @@ animation: right_to_left 1s ease;
 `,
 
 
-animateBottomToTop : (fromPosition,delay,) => `
+animateBottomToTop : (fromPosition,delay=2,) => `
 animation: animatebottom ${delay}s ;
 @keyframes animatebottom { 
   from{ margin-bottom:-100px; opacity:0;  } 
