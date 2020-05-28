@@ -1,13 +1,13 @@
-import React,{useEffect} from "react"
+import React, { useEffect } from "react"
 
 import { useStaticQuery, graphql } from 'gatsby';
-import SectionTitle from "../components/utils/sectionTitle";   
+import SectionTitle from "../components/utils/sectionTitle";
 import styled from 'styled-components';
 import PortfolioItem from '../templates/portfolio';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-  import {
+import {
     faGithub,
-  } from '@fortawesome/free-brands-svg-icons';
+} from '@fortawesome/free-brands-svg-icons';
 
 
 const Container = styled.section `
@@ -15,7 +15,7 @@ const Container = styled.section `
   flex-direction: column;
   align-items: center;
   padding: 5.5rem 0rem;
- // visibility:hidden;
+  visibility:hidden;
   @media ${props => props.theme.mediaQueries.small} {
     padding: 5rem 1rem;
   }
@@ -78,16 +78,16 @@ const ContentWrapper = styled.section `
 `;
 
 
-const GradientLink = styled.a`
+const GradientLink = styled.a `
   text-decoration: none !important;
   height: 40px !important;
-	line-height: 40px !important;
-	font-size: 16px !important;
-	letter-spacing: 1px;
-	margin: 25px 0;
-	padding: 0 30px !important;
-	color: #fff !important;
-	border: none !important;
+  line-height: 40px !important;
+  font-size: 16px !important;
+  letter-spacing: 1px;
+  margin: 25px 0;
+  padding: 0 30px !important;
+  color: #fff !important;
+  border: none !important;
    box-shadow: none;
    border-radius: 7px;
    ${props => props.theme.gradientBgMixin(props.theme.colors.primaryColor,props.theme.colors.secondaryColor)};  
@@ -95,8 +95,8 @@ const GradientLink = styled.a`
    
   @media ${props => props.theme.mediaQueries.small} {
     height: 35px !important;
-	line-height: 34px !important;
-	font-size: 14px !important;
+  line-height: 34px !important;
+  font-size: 14px !important;
   }
   @media ${props => props.theme.mediaQueries.smallest} {
     height: 30px !important;
@@ -106,12 +106,13 @@ const GradientLink = styled.a`
 `;
 
 
-const FontAwesomeDiv = styled(FontAwesomeIcon)`
+const FontAwesomeDiv = styled(FontAwesomeIcon)
+`
 padding-right:0.1rem;
 `;
 
 const Portfolio = () => {
-     const { allFile: items } = useStaticQuery(graphql`
+    const { allFile: items } = useStaticQuery(graphql `
 query {
      allFile(
        filter: {
@@ -147,19 +148,45 @@ query {
    `);
 
 
-    // useEffect(() => {
-    //     window.addEventListener("scroll", function() {
-    //         if (this.scrollY > 0) {
-    //             document.getElementById('portfolio').style.visibility = 'visible';
-    //         } else {
-    //             document.getElementById('portfolio').style.visibility = 'hidden';
-    //         }
-    //     });
-    // }, [])
+    useEffect(() => {
 
-   return (
+        function checkPosition() {
+            let element = document.getElementById('portfolio');
+            let windowHeight = window.innerHeight;
+            let portfolio = document.getElementsByClassName('portfolioWrapper');
+            let positionParentFromTop = element.getBoundingClientRect().top;
 
-     <Container id="portfolio">
+            if (positionParentFromTop - windowHeight <= -200) {
+
+                element.style.visibility = 'visible';
+
+                for (let i = 0; i < portfolio.length; i++) {
+
+                    let positionFromTop = portfolio[i].getBoundingClientRect().top;
+                    if (positionFromTop - windowHeight <= -100) {
+                        // portfolio[i].classList.add('animateTopToBottom');
+                        portfolio[i].style.visibility = 'visible';
+                        if (i % 2 === 0) {
+                            portfolio[i].classList.add('animateLeftToRight');
+                        } else {
+                            portfolio[i].classList.add('animateRightToLeft');
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+        window.addEventListener('scroll', checkPosition);
+        window.addEventListener('resize', checkPosition);
+
+        checkPosition();
+    }, [])
+
+    return (
+
+        <Container id="portfolio">
       
                <SectionTitle title="My Recent Work" />
         
@@ -177,8 +204,8 @@ query {
             
             More on <span> <FontAwesomeDiv  icon={faGithub} size="lg"/> </span>
            </GradientLink>
-      </Container> 
-   )
+      </Container>
+    )
 }
 
 

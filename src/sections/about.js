@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, { useEffect } from "react"
 import { useStaticQuery, graphql } from 'gatsby';
 import SectionTitle from "../components/utils/sectionTitle";
 import styled from 'styled-components';
@@ -8,7 +8,9 @@ const Container = styled.section `
   flex-direction: column;
   align-items: center;
   padding: 5.5rem 0rem;
- // visibility: hidden;
+  visibility: hidden;
+ 
+    
   @media ${props => props.theme.mediaQueries.small} {
     padding: 1rem 1rem;
   }
@@ -91,15 +93,24 @@ const About = () => {
 
     const { frontmatter: { resume, stack }, html } = aboutMe.childMarkdownRemark
 
-    // useEffect(() => {
-    //     window.addEventListener("scroll", function() {
-    //         if (this.scrollY > 0) {
-    //             document.getElementById('about').style.visibility = 'visible';
-    //         } else {
-    //             document.getElementById('about').style.visibility = 'hidden';
-    //         }
-    //     });
-    // }, [])
+    useEffect(() => {
+ 
+  function checkPosition() {
+    let element = document.getElementById('about');
+    let windowHeight = window.innerHeight;
+     let positionFromTop = element.getBoundingClientRect().top;
+     if (positionFromTop - windowHeight <= -100) {
+
+        element.classList.add('animateTopToBottom');
+          element.style.visibility = 'visible';
+      }    
+  }
+
+  window.addEventListener('scroll', checkPosition);
+  window.addEventListener('resize', checkPosition);
+
+  checkPosition();
+    }, [])
 
     return (
         <Container id="about" >       

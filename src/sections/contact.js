@@ -11,6 +11,7 @@ const Container = styled.section `
   flex-direction: column;
   align-items: center;
   padding: 10rem 0rem;
+  
  visibility:hidden;
     & p{
         @media ${props => props.theme.mediaQueries.small} {
@@ -71,14 +72,22 @@ const Contact = ({
     }
 }) => {
 
-useEffect(() => {
-        window.addEventListener("scroll", function() {
-            if (this.scrollY > 0) {
-                document.getElementById('contact').style.visibility = 'visible';
-            } else {
-                document.getElementById('contact').style.display = 'hidden';
-            }
-        });
+   useEffect(() => {
+ 
+  function checkPosition() {
+    let element = document.getElementById('contact');
+    let windowHeight = window.innerHeight;
+     let positionFromTop = element.getBoundingClientRect().top;
+     if (positionFromTop - windowHeight <= -200) {
+        element.classList.add('animateTopToBottom');
+          element.style.visibility = 'visible';
+      }    
+  }
+
+  window.addEventListener('scroll', checkPosition);
+  window.addEventListener('resize', checkPosition);
+
+  checkPosition();
     }, [])
 
   return(

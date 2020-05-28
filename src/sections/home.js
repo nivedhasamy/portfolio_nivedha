@@ -159,7 +159,7 @@ const Home = ({
 
            
                 <h2> {greeting}👋</h2>
-                 <Typist cursor={{element : ""}}>
+                 <Typist cursor={{element : " "}}>
                 <Caption> I’m             
                     <span className="title">&nbsp; Nivedha</span>              
                 </Caption>

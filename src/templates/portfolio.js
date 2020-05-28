@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,10 +14,15 @@ display: flex;
 justify-content: space-between;
 padding: 3rem 0rem;
   align-items: center;
+visibility:hidden;
 
-&:nth-child(2n) {
-    flex-direction: row-reverse;   
+&:nth-child(2n) {  
+
+    flex-direction: row-reverse;  
+ 
   }
+
+
 
 
 @media ${props =>  props.theme.mediaQueries.large  } { 
@@ -60,6 +65,8 @@ width: 45%;
     
 }
 
+
+
 @media ${props => props.theme.mediaQueries.medium} {
   width: 80%;
 }
@@ -78,7 +85,8 @@ const DetailsContainer = styled.div `
 text-align: start;
     width: 45%;  
     align-self: center;
-    
+  
+
     @media ${props => props.theme.mediaQueries.medium} {
       width: 80%;
     }
@@ -161,8 +169,12 @@ padding-right:0.1rem;
 
 const PortfolioItem = ({ portfolio }) => {
     const { title, live, source, stack, image } = portfolio.frontmatter;
+
+
+
+
     return (
-        <TemplateContainer>          
+        <TemplateContainer className ='portfolioWrapper'>          
           <ImageWrapper>
            {!!image && <Img style= {{width: '100%', height : '100%'}} fluid={image.childImageSharp.fluid}  />}
           </ImageWrapper>

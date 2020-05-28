@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,18 +12,7 @@ flex-direction: column;
 justify-content: space-between;
 width: 30rem;
 padding: 2rem 0rem;
-
-&:nth-child(n){
- ${props => props.theme.animateLeftToRight()};
-}
-
-&:nth-child(2n) {
-    
- ${props => props.theme.animateRightToLeft()}; 
-  }
-
-
-
+visibility:hidden;
 @media ${props => props.theme.mediaQueries.large} {
   width: 45%;
 }
@@ -119,10 +108,15 @@ padding-right:0.3rem;
 
 
 const BlogItem = ({ blog, html }) => {
+
   const { title, blogUrl, date, image,  } = blog.frontmatter;
+
+  
+
+
   return (
 
-    <BlogContainer>
+    <BlogContainer className="blogWrapper">
    
     <ImageContainer>
      {!!image &&  <ImgElement fluid={image.childImageSharp.fluid} alt="" />}

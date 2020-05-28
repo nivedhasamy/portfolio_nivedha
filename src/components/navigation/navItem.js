@@ -13,10 +13,10 @@ const NavItem = ({data}) => {
             {({ location }) => {
                 return (
                     <span>
-                        <Link
-                            to={`#${data}`}
+                        <a onClick={() => {document.getElementById(`${data}`).scrollIntoView({ block: 'start',  behavior: 'smooth' })}}
+                            //to={`#${data}`}
                             smooth={true}
-                            {...anchorAttrs}
+                            //{...anchorAttrs}
                             className={
                                 "/" + location.pathname.split("/")[1] ===
                                 `#${data}`
@@ -25,7 +25,7 @@ const NavItem = ({data}) => {
                             }
                         >
                             <span>{data}</span>
-                        </Link>
+                        </a>
                     </span>
                 );
             }}

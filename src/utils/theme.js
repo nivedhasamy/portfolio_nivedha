@@ -15,21 +15,27 @@ gradientTextMixin: (primaryColor,secondaryColor) => `
 
 animateLeftToRight : () => `
 
-animation: left_to_right 1s ease;
+animation: left_to_right 2s ease;
 @keyframes left_to_right {
-  from {    margin-left: -1.5em;  }
+  from {    margin-left: -3em;  }
   to {    margin-left: 0;  }
 }`,
 
 
 animateRightToLeft : () => `
-animation: right_to_left 1s ease;
+animation: right_to_left 2s ease;
 @keyframes right_to_left {
-  from {    margin-right: -1.5em;  }
+  from {    margin-right: -3em;  }
   to {    margin-right: 0;  }
 }
 `,
 
+animateTopToBottom : (fromPosition,delay=2,) => `
+animation: animatetop ${delay}s ;
+@keyframes animatetop { 
+  from{ margin-top:100px; opacity:0;  } 
+  to{ }
+}`,
 
 animateBottomToTop : (fromPosition,delay=2,) => `
 animation: animatebottom ${delay}s ;

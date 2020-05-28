@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export default createGlobalStyle`
+export default createGlobalStyle `
 
     html {     
       box-sizing: border-box;
@@ -25,6 +25,40 @@ export default createGlobalStyle`
         background: var(--primary-lighter); /* WebKit/Blink Browsers */
       }
 
+    .animateBottomToTop  {
+      animation: animatebottom 2s ;
+      @keyframes animatebottom { 
+        from{ margin-bottom:-100px; opacity:0;  } 
+        to{  }
+      }
+    }
+
+
+.animateLeftToRight {
+
+animation: left_to_right 2s ease;
+@keyframes left_to_right {
+  from {    margin-left: -3em;  }
+  to {    margin-left: 0;  }
+}
+}
+
+
+.animateRightToLeft {
+animation: right_to_left 2s ease;
+@keyframes right_to_left {
+  from {    margin-right: -3em;  }
+  to {    margin-right: 0;  }
+}
+}
+
+.animateTopToBottom {
+animation: animatetop 1s ;
+@keyframes animatetop { 
+  from{ margin-top:100%; opacity:0;  } 
+  to{ }
+}
+}
     body {
       font-family: 'Work Sans', sans-serif;
       margin: 0;
