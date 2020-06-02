@@ -26,7 +26,7 @@ export default createGlobalStyle `
       }
 
     .animateBottomToTop  {
-      animation: animatebottom 2s ;
+      animation: animatebottom 1s ;
       @keyframes animatebottom { 
         from{ margin-bottom:-100px; opacity:0;  } 
         to{  }
@@ -36,7 +36,7 @@ export default createGlobalStyle `
 
 .animateLeftToRight {
 
-animation: left_to_right 2s ease;
+animation: left_to_right 1s ease;
 @keyframes left_to_right {
   from {    margin-left: -3em;  }
   to {    margin-left: 0;  }
@@ -45,7 +45,7 @@ animation: left_to_right 2s ease;
 
 
 .animateRightToLeft {
-animation: right_to_left 2s ease;
+animation: right_to_left 1s ease;
 @keyframes right_to_left {
   from {    margin-right: -3em;  }
   to {    margin-right: 0;  }
@@ -53,7 +53,7 @@ animation: right_to_left 2s ease;
 }
 
 .animateTopToBottom {
-animation: animatetop 1s ;
+animation: animatetop 2s ;
 @keyframes animatetop { 
   from{ margin-top:100%; opacity:0;  } 
   to{ }
