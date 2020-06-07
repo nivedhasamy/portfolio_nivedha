@@ -58,17 +58,17 @@ background: var(--background);
         left: 0;
 z-index: 90; 
 width:100%;
-height:70px;
+height:75px;
 
   ${props => {
     if (props.scroll) {
       return `
         
         padding:8px 25px;
-             height:70px;  
+             height:68px;  
         
         
-        transition: padding 500ms ease;
+        transition: 500ms ease;
          &:after{
           
             content: "";
@@ -77,7 +77,7 @@ height:70px;
             background: var(--myGradient);
             left:0;
             height: 3px;
-            top:68px;
+            top:66px;
             width:100%;
             opacity:.4;
         }
@@ -89,8 +89,8 @@ height:70px;
         justify-content:space-between;
         padding: 10px 20px;
         align-items: center;
-transition: padding 10 s;
-height:70px;
+        background: var(--background);
+height:75px;
 `;
     }
   }}
