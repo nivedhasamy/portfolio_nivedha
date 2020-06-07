@@ -1,9 +1,9 @@
-import React, {useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "react-sidebar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faBars,
-  } from '@fortawesome/free-solid-svg-icons';
+} from '@fortawesome/free-solid-svg-icons';
 import NavLinks from './navLinks';
 import Social from '../socialLinks';
 import Logo from "./logo";
@@ -15,8 +15,8 @@ import ThemeSwitchButton from './switchTheme';
 const MobileNavContainer = styled.section `
 
 text-align: center;
-		display: flex;
-		flex-direction: column;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     background:var(--background);
     padding: 30px 0px;
@@ -27,7 +27,7 @@ text-align: center;
    width: 75vw;
     height:100vh;
     top: 0px;
-    z-index: 9999;
+    z-index: 100;
     transition-property: left;
     transition-duration: 0.2s;
     transition-timing-function: linear;
@@ -38,9 +38,9 @@ text-align: center;
 
 
 const Links = styled.section `
-			padding: 20px 0;
-			display: flex;
-			align-items: center; 
+      padding: 20px 0;
+      display: flex;
+      align-items: center; 
       flex-grow: 0.5;   
 `;
 
@@ -50,17 +50,21 @@ const MobileMenuContainer = styled.section `
   align-items: center;  
   justify-content:space-between;
   padding: 10px 20px;
+background: var(--background);
 
-
+        position: fixed;
+        top:0;
+        left: 0;
+z-index: 1; 
+width:100%;
   ${props => {
     if (props.scroll) {
       return `
-        left: 0;
+        
         padding:8px 25px;
-        z-index: 95;        
-        background: var(--background);
-        width:100%;
-        position: fixed;
+               
+        
+        
         transition: padding 500ms ease;
          &:after{
           
@@ -77,25 +81,31 @@ const MobileMenuContainer = styled.section `
       `;
     } else {
       return `
-        transition: height 10s;
-      `;
+      transition: 500ms ease;
+        position: fixed;
+        justify-content:space-between;
+        padding: 10px 20px;
+        align-items: center;
+transition: padding 10 s;
+`;
     }
   }}
 
 `;
 
-const SidebarContainer = styled.section`
+const SidebarContainer = styled.section `
 
 
 `;
 
-const FontAwesomeIconStyled = styled(FontAwesomeIcon)`
+const FontAwesomeIconStyled = styled(FontAwesomeIcon)
+`
   color:var(--textSecondary);
 `;
 
-function SidebarContents({onSetSidebarOpen}) {
-  return (
-      <MobileNavContainer  onClick={() => onSetSidebarOpen(false)}>
+function SidebarContents({ onSetSidebarOpen }) {
+    return (
+        <MobileNavContainer  onClick={() => onSetSidebarOpen(false)}>
           <div>
               <Link to="/">
                   <Logo />
@@ -106,33 +116,45 @@ function SidebarContents({onSetSidebarOpen}) {
           </Links>
           <ThemeSwitchButton/>     
       </MobileNavContainer>
-  );
+    );
 }
 
 
 const MobileNav = () => {
-  
 
-const [scroll, setScrollState] = useState(false);
+
+    const [scroll, setScrollState] = useState(false);
     const [sidebarOpen, onSetSidebarOpen] = useState(false);
 
     useEffect(() => {
         window.addEventListener("scroll", function() {
-                    if (this.scrollY > 0) {
-                        setScrollState(true);
-                    } else {
-                        setScrollState(false);
-                    }
-                });
-            },[scroll])
-            
+            if (this.scrollY > 0) {
+                setScrollState(true);
+            } else {
+                setScrollState(false);
+            }
+        });
+    }, [scroll])
+
     return (
-      <SidebarContainer >
+        <SidebarContainer >
       <Sidebar
         sidebar={<SidebarContents onSetSidebarOpen={onSetSidebarOpen}/>}
         open={sidebarOpen}
         onSetOpen={onSetSidebarOpen}  
-           
+            styles={{
+                        sidebar: {
+                            zIndex: 101,
+                            position: "fixed"
+                        },
+                        overlay: {
+                            zIndex: 100
+                        },
+                        dragHandle: {
+                            position: "fixed",
+                            zIndex: "99999"
+                        }
+                    }}
       > 
       <MobileMenuContainer scroll={scroll}>
       <span  onClick={() => onSetSidebarOpen(true)}>
@@ -149,7 +171,7 @@ const [scroll, setScrollState] = useState(false);
 </SidebarContainer>
 
     );
-  }
+}
 
- 
+
 export default MobileNav;
