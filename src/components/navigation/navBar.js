@@ -12,9 +12,9 @@ position: fixed;
 top:0;
 width: 100%;
 justify-content: space-between;
-padding: 8px 44px;
+padding: 16px 35px;
 align-items: center;
-transition: height .25s;
+transition: padding .25s;
 
 background: var(--background);
   @media ${props => props.theme.mediaQueries.small} {
@@ -26,9 +26,9 @@ ${props => {
     if (props.scroll) {
       return `
         left: 0;
-        padding:0px 15px;
+        padding:10px 20px;
         z-index: 99;        
-        
+        transition: 500ms ease;
          &:after{
             content: "";
             position: absolute;
@@ -43,8 +43,9 @@ ${props => {
       `;
     } else {
       return `
+      transition: 500ms ease;
         position: fixed;
-        padding: 8px 44px;
+        padding: 16px 35px;
         align-items: center;
         transition: height 10s;
       `;

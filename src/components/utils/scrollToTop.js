@@ -20,7 +20,7 @@ import {
   
 
 const ScrollToTop = ({title}) => {
-     return <ScrollToTopContainer onClick={() => window.scrollTo({top: 0, behavior: "smooth"})} title="free ride to top"><FontAwesomeIcon icon={faArrowCircleUp}  size="2x"/></ScrollToTopContainer>;
+     return <ScrollToTopContainer onClick={() => window.scrollTo({top: 0, behavior: "smooth"})} title="free ride to top"><FontAwesomeIcon icon={faArrowCircleUp}  size="lg"/></ScrollToTopContainer>;
 };
 
 export default ScrollToTop;

@@ -17,19 +17,31 @@ const MobileNavContainer = styled.section `
 text-align: center;
 		display: flex;
 		flex-direction: column;
-		height: 100vh;
     align-items: center;
-    width: 75vw;
-    height:100vh;
     background:var(--background);
+    padding: 30px 0px;
 
+
+       
+    left: 0;
+   width: 75vw;
+    height:100vh;
+    top: 0px;
+    z-index: 9999;
+    transition-property: left;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    transform: translate3d(0px, 0px, 0px);
 `;
+
+
 
 
 const Links = styled.section `
 			padding: 20px 0;
 			display: flex;
-			align-items: center;    
+			align-items: center; 
+      flex-grow: 0.5;   
 `;
 
 const MobileMenuContainer = styled.section `
@@ -37,20 +49,21 @@ const MobileMenuContainer = styled.section `
   flex-direction:row;
   align-items: center;  
   justify-content:space-between;
-  padding: 10px 40px;
+  padding: 10px 20px;
 
 
   ${props => {
     if (props.scroll) {
       return `
         left: 0;
-        padding:0px 25px;
-        z-index: 99;        
+        padding:8px 25px;
+        z-index: 95;        
         background: var(--background);
         width:100%;
         position: fixed;
-
+        transition: padding 500ms ease;
          &:after{
+          
             content: "";
             position: absolute;
             z-index: -1;

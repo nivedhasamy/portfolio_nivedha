@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Logo from './navigation/logo';
+import FooterLogo from './utils/footerLogo';
 import styled from 'styled-components';
 import ScrollToTop from './utils/scrollToTop';
 
@@ -18,7 +19,7 @@ display: flex;
 const Footer = ({ siteTitle }) => (
   <footer>
     <FooterContainer>
-      <Logo/>
+      <FooterLogo/>
       Copyright © {new Date().getFullYear()}, Nivedha    
       
    <ScrollToTop/>  
