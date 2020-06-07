@@ -28,6 +28,7 @@ text-align: center;
     height:100vh;
     top: 0px;
     z-index: 100;
+    position:relative;
     transition-property: left;
     transition-duration: 0.2s;
     transition-timing-function: linear;
