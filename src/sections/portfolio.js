@@ -16,6 +16,7 @@ const Container = styled.section `
   align-items: center;
   padding: 5.5rem 0rem;
   visibility:hidden;
+  z-index:50;
   @media ${props => props.theme.mediaQueries.small} {
     padding: 5rem 1rem;
   }

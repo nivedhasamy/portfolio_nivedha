@@ -11,7 +11,7 @@ const Container = styled.section `
   flex-direction: column;
   align-items: center;
   padding: 10rem 0rem;
-  
+  z-index:50;
  visibility:hidden;
     & p{
         @media ${props => props.theme.mediaQueries.small} {

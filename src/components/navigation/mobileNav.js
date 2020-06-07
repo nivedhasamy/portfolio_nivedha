@@ -56,14 +56,16 @@ background: var(--background);
         position: fixed;
         top:0;
         left: 0;
-z-index: 1; 
+z-index: 90; 
 width:100%;
+height:70px;
+
   ${props => {
     if (props.scroll) {
       return `
         
         padding:8px 25px;
-               
+             height:70px;  
         
         
         transition: padding 500ms ease;
@@ -75,7 +77,7 @@ width:100%;
             background: var(--myGradient);
             left:0;
             height: 3px;
-            top:97%;
+            top:68px;
             width:100%;
             opacity:.4;
         }
@@ -88,6 +90,7 @@ width:100%;
         padding: 10px 20px;
         align-items: center;
 transition: padding 10 s;
+height:70px;
 `;
     }
   }}
