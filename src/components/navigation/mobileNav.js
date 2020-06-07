@@ -77,7 +77,7 @@ height:75px;
             background: var(--myGradient);
             left:0;
             height: 3px;
-            top:66px;
+            top:65px;
             width:100%;
             opacity:.4;
         }
