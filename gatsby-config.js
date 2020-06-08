@@ -6,7 +6,7 @@ module.exports = {
     intro: `I’m <span class="title">Nivedha</span>`,
     tagLine: `Member of community that is powered by caffeine and loves to open source everything they build.`,
     author: `Nivedha`,
-    siteUrl: 'http://localhost:8000',    
+    siteUrl: 'https://nivedhasamy.netlify.app/',    
     capitalizeTitleOnHome: false,
     introTag: `FRONT-END DEVELOPER | BLOGGER`,
     keywords:['frontend','developer','nivedha','react','redux','gatsby','portfolio'],
