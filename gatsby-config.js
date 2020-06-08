@@ -81,6 +81,16 @@ footerLinks: [
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-dark-mode`,
-    `gatsby-plugin-sass`,     
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Work Sans\:300,400,400i,700`,
+          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
+    }     
   ],
 }
