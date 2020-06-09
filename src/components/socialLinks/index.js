@@ -15,6 +15,7 @@ const SocialContainer = styled.div`
 margin-top: 1.5rem;
 & a{
   margin: 1rem;
+  cursor:pointer;
   color:var(----navHightlight);
   &:hover{
       color:var(--textBlue);
