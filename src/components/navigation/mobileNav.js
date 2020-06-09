@@ -62,7 +62,7 @@ height:75px;
   ${props => {
     if (props.scroll) {
       return `
-        
+        z-index:99;
         padding:8px 25px;
              height:68px;  
         background: var(--background);
