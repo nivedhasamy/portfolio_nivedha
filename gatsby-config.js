@@ -31,7 +31,7 @@ footerLinks: [
   },
   {
       name: "GitHub",
-      url: "https://github.com/akzhy/gatsby-starter-elemental"
+      url: "https://github.com/NihilisticNive25/portfolio_nivedha"
   }
 ],
 },
@@ -70,7 +70,7 @@ footerLinks: [
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        icon: `images/icon.png`, // This path is relative to the root of the site.
       },
     },
     {
