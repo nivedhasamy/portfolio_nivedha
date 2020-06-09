@@ -27,7 +27,7 @@ text-align: center;
    width: 75vw;
     height:100vh;
     top: 0px;
-    z-index: 100;
+    -webkit-transform:translateZ(100);
     position:relative;
     transition-property: left;
     transition-duration: 0.2s;
@@ -52,11 +52,10 @@ const MobileMenuContainer = styled.section `
   justify-content:space-between;
   padding: 10px 20px;
 background: var(--background);
-
+z-index:99;
         position: fixed;
         top:0;
         left: 0;
-z-index: 90; 
 width:100%;
 height:75px;
 
@@ -66,7 +65,7 @@ height:75px;
         
         padding:8px 25px;
              height:68px;  
-        
+        background: var(--background);
         
         transition: 500ms ease;
          &:after{
