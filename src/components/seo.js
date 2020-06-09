@@ -4,8 +4,8 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
+    const { site } = useStaticQuery(
+        graphql `
       query {
         site {
           siteMetadata {
@@ -13,20 +13,23 @@ function SEO({ description, lang, meta, title }) {
             description
             author
             keywords
-            logo
+            imageSeo
           }
+          
         }
       }
     `
-  )
+    )
 
-  const metaDescription = description || site.siteMetadata.description
-const metaImage = site.siteMetadata.logo
+    const metaDescription = description || site.siteMetadata.description
+    const metaImage = `${site.siteMetadata.siteUrl}/${
+    site.siteMetadata.imageSeo
+  }`;
 
 
 
-  return (
-    <Helmet
+    return (
+        <Helmet
       htmlAttributes={{
         lang,
       }}
@@ -81,20 +84,20 @@ const metaImage = site.siteMetadata.logo
         ])
       .concat(meta)}
     />
-  )
+    )
 }
 
 SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
+    lang: `en`,
+    meta: [],
+    description: ``,
 }
 
 SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    lang: PropTypes.string,
+    meta: PropTypes.arrayOf(PropTypes.object),
+    title: PropTypes.string.isRequired,
 }
 
 export default SEO

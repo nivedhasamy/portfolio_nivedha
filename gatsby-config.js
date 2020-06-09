@@ -11,7 +11,7 @@ module.exports = {
     introTag: `FRONT-END DEVELOPER | BLOGGER`,
     keywords:['frontend','developer','nivedha','react','redux','gatsby','portfolio'],
     logo:'images/icon.png',
-   
+   imageSeo : 'icon.png',
    social: {
       twitter: 'nive2504',
       instagram: 'nive2504',
@@ -70,7 +70,7 @@ footerLinks: [
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `images/icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     {
