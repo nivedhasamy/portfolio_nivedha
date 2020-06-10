@@ -26,8 +26,9 @@ import MobileNav from './navigation/mobileNav';
   return (
     <ThemeProvider theme={theme}>   
        <GlobalStyles />
-    { isMobile ? <MobileNav/> : <Navbar/> }
+    
       {children}
+      { isMobile ? <MobileNav/> : <Navbar/> }
       <Footer/>
     </ThemeProvider>
   )

@@ -149,14 +149,7 @@ const MobileNav = () => {
                         sidebar: {
                             zIndex: 101,
                             position: "fixed"
-                        },
-                        overlay: {
-                            zIndex: 100
-                        },
-                        dragHandle: {
-                            position: "fixed",
-                            zIndex: "99999"
-                        }
+                        },                        
                     }}
       > 
       <MobileMenuContainer scroll={scroll}>
