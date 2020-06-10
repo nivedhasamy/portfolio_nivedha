@@ -10,6 +10,7 @@ const Container = styled.section `
   padding: 5.5rem 0rem;
   visibility: hidden;
  z-index:0;
+ -webkit-transform: translateZ(0);
   position: relative;
     
   @media ${props => props.theme.mediaQueries.small} {
