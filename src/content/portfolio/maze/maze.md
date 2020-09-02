@@ -1,7 +1,7 @@
 ---
 title: 'React Form'
-live: 'https://nihilisticnive25.github.io/maze/'
-source: 'https://github.com/NihilisticNive25/maze'
+live: 'https://nivedhasamy.github.io/maze/'
+source: 'https://github.com/nivedhasamy/maze'
 stack: 'JavaScript - HTML5'
 image: 'maze.png'
 ---
