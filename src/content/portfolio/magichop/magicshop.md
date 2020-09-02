@@ -1,7 +1,7 @@
 ---
 title: 'CRWN Clothing'
 live: 'http://shop-at-crwn-clothing.netlify.app/'
-source: 'https://github.com/NihilisticNive25/crwnClothing'
+source: 'https://github.com/nivedhasamy/crwnClothing'
 stack: 'React - Redux-Saga - Styled Component - Firebase'
 image: 'shop.png'
 ---
