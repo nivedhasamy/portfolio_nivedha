@@ -1,5 +1,5 @@
 ---
-title: 'React Form'
+title: 'Maze Game'
 live: 'https://nivedhasamy.github.io/maze/'
 source: 'https://github.com/nivedhasamy/maze'
 stack: 'JavaScript - HTML5'
