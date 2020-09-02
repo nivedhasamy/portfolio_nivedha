@@ -1,5 +1,5 @@
 ---
-title: 'Maze Game'
+title: 'Feed the Bunny'
 live: 'https://nivedhasamy.github.io/maze/'
 source: 'https://github.com/nivedhasamy/maze'
 stack: 'JavaScript - HTML5'
