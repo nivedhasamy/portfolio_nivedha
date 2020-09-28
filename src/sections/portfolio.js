@@ -202,7 +202,7 @@ query {
                 ))}
             </div>
             </ContentWrapper>
-           <GradientLink href="https://github.com/NihilisticNive25/" >
+           <GradientLink href="https://github.com/nivedhasamy" >
             
             More on <span> <FontAwesomeDiv  icon={faGithub} size="lg"/> </span>
            </GradientLink>
