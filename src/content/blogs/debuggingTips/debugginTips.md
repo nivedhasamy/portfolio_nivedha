@@ -1,8 +1,8 @@
 ---
-title: 'Logging messages to Chrome devTools Console'
-blogUrl: 'https://medium.com/@nivedhasamy/console-tips-for-better-debugging-addfe9a2825e'
-date: ' 16 Feb 2020'
-image: 'console.jpeg'
+title: 'Tips for Using React’s UseEffect Effectively'
+blogUrl: 'https://medium.com/better-programming/tips-for-using-reacts-useeffect-effectively-dfe6ae951421'
+date: ' 10 Jun 2020'
+image: 'debugger.jpeg'
 ---
 
-Printing messages and preserving logs in Console.
+Dependency array, code optimization, useCallback, and more.
