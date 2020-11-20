@@ -14,7 +14,7 @@ module.exports = {
    imageSeo : 'icon.png',
    social: {
       twitter: 'nive2504',
-      instagram: 'nive2504',
+      instagram: 'nivedraws',
       linkedin: 'nivedhaduraisamy',
       github: 'NihilisticNive25',
       email: 'nivedhasamy@gmail.com'
