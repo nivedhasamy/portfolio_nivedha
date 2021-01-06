@@ -16,7 +16,7 @@ module.exports = {
       twitter: 'nive2504',
       instagram: 'nivedraws',
       linkedin: 'nivedhaduraisamy',
-      github: 'NihilisticNive25',
+      github: 'nivedhasamy',
       email: 'nivedhasamy@gmail.com'
     },
 contact: {
