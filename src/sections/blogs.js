@@ -172,7 +172,7 @@ const Blog = () => {
           />
         ))}
       </ContentWrapper>
-      <GradientLink href="https://medium.com/@nivedhasamy" tagret="_blank">
+      <GradientLink href="https://medium.com/@nivedhasamy" target="_blank">
         Read more{" "}
         <span>
           {" "}
