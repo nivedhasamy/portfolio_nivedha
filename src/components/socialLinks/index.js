@@ -1,44 +1,41 @@
-import React from 'react';
-import styled from 'styled-components';
-import { useStaticQuery, graphql } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react"
+import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faGithub,
-  faFacebookF,
   faLinkedinIn,
   faInstagram,
-  faYoutube,
   faTwitter,
-} from '@fortawesome/free-brands-svg-icons';
+} from "@fortawesome/free-brands-svg-icons"
 
 const SocialContainer = styled.div`
-margin-top: 1.5rem;
-& a{
-  margin: 1rem;
-  cursor:pointer;
-  color:var(----navHightlight);
-  &:hover{
-      color:var(--textBlue);
+  margin-top: 1.5rem;
+  & a {
+    margin: 1rem;
+    cursor: pointer;
+    color: var(----navHightlight);
+    &:hover {
+      color: var(--textBlue);
+    }
   }
-}
-`;
-
+`
 
 const Social = () => {
   const { site } = useStaticQuery(graphql`
-  query {
-    site {
-      siteMetadata {
-        social {
-          twitter
-          instagram
-          linkedin
-          github
+    query {
+      site {
+        siteMetadata {
+          social {
+            twitter
+            instagram
+            linkedin
+            github
+          }
         }
-      }  
-  }
-}
-  `);
+      }
+    }
+  `)
 
   return (
     <>
@@ -49,27 +46,23 @@ const Social = () => {
           aria-label="Github"
           href={`https://github.com/${site.siteMetadata.social.github}`}
         >
-          <FontAwesomeIcon icon={faGithub} size="lg"/>
+          <FontAwesomeIcon icon={faGithub} size="lg" />
         </a>
         <a
           rel="noreferrer"
           target="_blank"
           aria-label="Linkedin"
-          href={`https://www.linkedin.com/in/${
-            site.siteMetadata.social.linkedin
-          }`}
+          href={`https://www.linkedin.com/in/${site.siteMetadata.social.linkedin}`}
         >
-          <FontAwesomeIcon icon={faLinkedinIn} size="lg"/>
+          <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
         </a>
         <a
           rel="noreferrer"
           target="_blank"
           aria-label="Instagram"
-          href={`https://www.instagram.com/${
-            site.siteMetadata.social.instagram
-          }`}
+          href={`https://www.instagram.com/${site.siteMetadata.social.instagram}`}
         >
-          <FontAwesomeIcon icon={faInstagram} size="lg"/>
+          <FontAwesomeIcon icon={faInstagram} size="lg" />
         </a>
         <a
           rel="noreferrer"
@@ -77,11 +70,11 @@ const Social = () => {
           aria-label="Twitter"
           href={`https://www.twitter.com/${site.siteMetadata.social.twitter}`}
         >
-          <FontAwesomeIcon icon={faTwitter} size="lg"/>
+          <FontAwesomeIcon icon={faTwitter} size="lg" />
         </a>
       </SocialContainer>
     </>
-  );
-};
+  )
+}
 
-export default Social;
+export default Social

@@ -6,37 +6,44 @@ module.exports = {
     intro: `I’m <span class="title">Nivedha</span>`,
     tagLine: `Member of community that is powered by caffeine and loves to open source everything they build.`,
     author: `Nivedha`,
-    siteUrl: 'https://nivedhasamy.netlify.app/',    
+    siteUrl: "https://nivedhasamy.netlify.app/",
     capitalizeTitleOnHome: false,
     introTag: `FRONT-END DEVELOPER | BLOGGER`,
-    keywords:['frontend','developer','nivedha','react','redux','gatsby','portfolio'],
-    logo:'images/icon.png',
-   imageSeo : 'icon.png',
-   social: {
-      twitter: 'nive2504',
-      instagram: 'nivedraws',
-      linkedin: 'nivedhaduraisamy',
-      github: 'nivedhasamy',
-      email: 'nivedhasamy@gmail.com'
+    keywords: [
+      "frontend",
+      "developer",
+      "nivedha",
+      "react",
+      "redux",
+      "gatsby",
+      "portfolio",
+    ],
+    logo: "images/icon.png",
+    imageSeo: "icon.png",
+    social: {
+      twitter: "nive2504",
+      instagram: "nivedraws",
+      linkedin: "nivedhaduraisamy",
+      github: "nivedhasamy",
+      email: "nivedhasamy@gmail.com",
     },
-contact: {
-  description: `Interested in working together? Let's have a talk:`,
-  mail: "nivedhasamy@gmail.com",
-  address: "Chennai, India"
-},
-footerLinks: [
-  {
-      name: "PRIVACY POLICY",
-      url: "/privacy-policy"
+    contact: {
+      description: `Interested in working together? Let's have a talk:`,
+      mail: "nivedhasamy@gmail.com",
+      address: "Chennai, India",
+    },
+    footerLinks: [
+      {
+        name: "PRIVACY POLICY",
+        url: "/privacy-policy",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/NihilisticNive25/portfolio_nivedha",
+      },
+    ],
   },
-  {
-      name: "GitHub",
-      url: "https://github.com/NihilisticNive25/portfolio_nivedha"
-  }
-],
-},
   plugins: [
-    `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -87,10 +94,24 @@ footerLinks: [
       options: {
         fonts: [
           `Work Sans\:300,400,400i,700`,
-          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+          `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
         ],
-        display: 'swap'
-      }
-    }     
+        display: "swap",
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "noreferrer",
+            },
+          },
+        ],
+      },
+    },
   ],
 }
